@@ -14,7 +14,7 @@ function httpGet(index) {
         response.pipe(bl(function (err, data) {
             if (err)
                 return console.error(err)
-                
+
             results[index] = data.toString()
             count++
 
@@ -29,30 +29,3 @@ function httpGet(index) {
 for (var i = 0; i < 3; i++) {
     httpGet(i)
 }
-
-// var urls = process.argv.slice(2)
-// var count = urls.length;
-// var results = [];
-
-
-
-
-// urls.forEach((url, index) => {
-//     console.log("Res :" , results[index])
-//     http.get(url, (res) => {
-//         res.pipe(bl((err, data) => {
-//             if (err) {
-//                 throw err;
-//             }
-//             results[index] = data.toString();
-//             console.log(results[index])
-//             count--;
-
-//             if (count == 0) {
-//                 results.forEach((result) => {
-//                     console.log(result)
-//                 })
-//             }
-//         }))
-//     })
-// });
